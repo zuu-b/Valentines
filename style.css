@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Cormorant+Garamond:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* HOME PAGE */
+
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(rgba(139, 0, 0, 0.75), rgba(80, 0, 0, 0.9)),
+    url("tulips.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.card {
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(15px);
+
+  padding: 40px;
+
+  border-radius: 25px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+  color: white;
+}
+
+.card h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.card p {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+button {
+  border: none;
+  background: #ff4fa3;
+  color: white;
+  padding: 15px 35px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #ff4fa3;
+}
+
+/* LETTER PAGE */
+
+.letter-page {
+  min-height: 100vh;
+  background: #7b0000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 30px;
+}
+
+/* PAPER */
+
+.letter {
+  background: #ffdbe9;
+
+  max-width: 850px;
+
+  padding: 80px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+
+  font-family: "Cormorant Garamond", serif;
+
+  line-height: 2;
+
+  color: #70294c;
+
+  position: relative;
+
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 28px,
+    rgba(0, 0, 0, 0.03) 29px
+  );
+}
+
+.letter h1 {
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  color: #ff1493;
+  font-size: 4rem;
+  margin-bottom: 40px;
+}
+
+/* Wax Seal */
+
+.wax-seal {
+  position: absolute;
+
+  top: -40px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 90px;
+  height: 90px;
+
+  background: #a40000;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+
+  font-size: 2rem;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.letter-wrapper {
+  position: relative;
+}
+
+/* TULIPS */
+
+.tulips {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 180px;
+  background: url("tulips.png");
+  background-repeat: repeat-y;
+  background-size: contain;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+/* FLOATING HEARTS */
+
+.hearts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hearts span {
+  position: absolute;
+  bottom: -100px;
+  width: 25px;
+  height: 25px;
+  background: #ff85c2;
+  transform: rotate(45deg);
+  animation: float 10s linear infinite;
+}
+
+.hearts span::before,
+.hearts span::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: #ff85c2;
+  border-radius: 50%;
+}
+
+.hearts span::before {
+  top: -12px;
+}
+
+.hearts span::after {
+  left: -12px;
+}
+
+.hearts span:nth-child(1) {
+  left: 10%;
+  animation-duration: 8s;
+}
+
+.hearts span:nth-child(2) {
+  left: 30%;
+  animation-duration: 11s;
+}
+
+.hearts span:nth-child(3) {
+  left: 50%;
+  animation-duration: 9s;
+}
+
+.hearts span:nth-child(4) {
+  left: 70%;
+  animation-duration: 12s;
+}
+
+.hearts span:nth-child(5) {
+  left: 90%;
+  animation-duration: 10s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-110vh) rotate(405deg);
+    opacity: 0;
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .letter {
+    padding: 40px;
+  }
+
+  .letter h1 {
+    font-size: 2.8rem;
+  }
+
+  .tulips {
+    width: 80px;
+  }
+}

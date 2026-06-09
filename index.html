@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Special Letter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="home-page">
+    <div class="hearts">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="card">
+      <h1>❤️ For Someone Special ❤️</h1>
+
+      <p>Before you open this letter...</p>
+
+      <input type="text" id="name" placeholder="Enter Your Name" />
+
+      <button onclick="openLetter()">Open Letter 💌</button>
+    </div>
+
+    <script>
+      function openLetter() {
+        const name = document.getElementById("name").value;
+
+        if (name.trim() === "") {
+          alert("Please enter your name.");
+          return;
+        }
+
+        localStorage.setItem("loverName", name);
+        window.location.href = "letter.html";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Love Letter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="letter-page">
+    <!-- Optional Music -->
+    <audio autoplay loop>
+      <source src="love-song.mp3" type="audio/mp3" />
+    </audio>
+
+    <!-- Floating Hearts -->
+    <div class="hearts">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Tulips -->
+    <div class="tulips left"></div>
+    <div class="tulips right"></div>
+
+    <div class="letter-wrapper">
+      <div class="wax-seal">❤️</div>
+
+      <div class="letter">
+        <h1>My Love Letter 💌</h1>
+
+        <p id="letterText"></p>
+      </div>
+    </div>
+
+    <script>
+      const name = localStorage.getItem("loverName");
+
+      const message = `
+
+Hi ${name},
+
+I was wondering if you could hold me down in ways that truly make me feel your love.
+
+The love I have for you is real, and I hope you can hold me down in ways that remind me where my safe space is. A place where I know I can bring you my worries, my fears, and my dreams without hesitation.
+
+Please let me love you. Let me be the one who gives you everything you need—good love, genuine affection, comfort, support, and care.
+
+Baby, make me your choice. Choose me in every lifetime, in every universe, and in every version of our story.
+
+No matter where life takes us, my heart will always find its way back to you.
+
+Forever Yours ❤️
+
+`;
+
+      let i = 0;
+
+      function typeWriter() {
+        if (i < message.length) {
+          document.getElementById("letterText").innerHTML += message.charAt(i);
+
+          i++;
+
+          setTimeout(typeWriter, 35);
+        }
+      }
+
+      typeWriter();
+    </script>
+  </body>
+</html>
